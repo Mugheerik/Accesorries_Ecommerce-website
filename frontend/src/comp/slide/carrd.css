@@ -1,0 +1,24 @@
+.carrd:hover{
+    transform: scale(1.1);
+    }
+ .cardd{
+  
+    font-size: 5px;
+    
+
+    
+
+    }
+    .padd{
+        margin: 1vw;
+    }
+    .textt{
+        color: rgb(255, 255, 255);
+font-style: oblique;
+font-size: 20;
+        font-weight: 300;
+        
+    }
+.textt:hover{
+    color: rgb(13, 202, 240);
+}

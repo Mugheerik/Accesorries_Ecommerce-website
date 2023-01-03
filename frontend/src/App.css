@@ -1,0 +1,27 @@
+.App{
+  font-family:  Helvetica ;
+  
+  text-align: center;
+
+ 
+ 
+}
+.cardd:hover{
+transform: scale(1.1);
+}
+
+.extra{
+  font-family:  sans-serif;
+}
+.Link{
+  text-decoration: none;
+  color: rgb(216, 214, 214);
+}
+.Link:hover{
+ color:  rgb(13, 202, 240);
+}
+.ddd{
+  position: fixed;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}

@@ -1,0 +1,36 @@
+.Card1{
+    padding-top: 3vh;
+    margin-top: 10vh;
+}
+.container{
+    justify-content: center;
+}
+/* .form{
+
+    text-align: center;
+   
+    width: max-content;
+   
+    border-radius: 10%;
+   
+    color:  rgb(13, 202, 240); 
+    }
+    .second{
+        
+        width: 55vw;
+        height: 3vh;
+        
+        
+    }  */
+    /* Form{
+      
+        color:rgb(245, 246, 247); 
+       display: flex;
+       margin: 10vh;
+       padding-bottom: 5vh;
+        justify-content:center;
+        flex-direction: column;
+        width: 20vw;
+        
+    } */
+   

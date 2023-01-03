@@ -1,0 +1,22 @@
+.display{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+    justify-self: center;
+    padding: 10vh;
+    border: 2px solid rgb(13, 202, 240);
+    
+}
+.row{
+   
+display: flex;
+justify-self:flex-start;
+}
+.col{
+    justify-content: flex-start;
+}
+
+.dd{
+    margin-top: 5vh;
+}
