@@ -1,12 +1,27 @@
 
 import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  FacebookLoginButton,
-  InstagramLoginButton
-} from "react-social-login-buttons";
+import LoginButton from "./googlelogin"; 
+import LogoutButton from "./googlelogout";
+import { useEffect } from "react";
+import {gapi} from "gapi-script";
 import './Signin.css';
 const SignInForm=()=> {
+
+  const clientid = "1053601419167-t3acq2mhru5neo86d72qpnjm4t7pb5bg.apps.googleusercontent.com";
+
+  useEffect(()=>{
+    function start(){
+      gapi.client.init({
+        clientid:clientid,
+        scope:""
+      })
+    };
+    gapi.load("client:auth2",start);
+  })
+  
+
+
    const [usersigndata,setUsersigndata] = useState({
         email: "",
         password: ""
@@ -69,12 +84,12 @@ const SignInForm=()=> {
             </div>
   
             <div className="socialMediaButtons">
-              <div className="facebookButton">
-                <FacebookLoginButton onClick={() => alert("Hello")} />
+              <div >
+               <LoginButton/>
               </div>
   
-              <div className="instagramButton">
-                <InstagramLoginButton onClick={() => alert("Hello")} />
+              <div >
+                <LogoutButton/>
               </div>
             </div>
           </form>

@@ -8,6 +8,10 @@
     border: 2px solid rgb(13, 202, 240);
     
 }
+input{
+    justify-items: center;
+    margin-top: 3vh;
+}
 .row{
    
 display: flex;
@@ -20,3 +24,4 @@ justify-self:flex-start;
 .dd{
     margin-top: 5vh;
 }
+

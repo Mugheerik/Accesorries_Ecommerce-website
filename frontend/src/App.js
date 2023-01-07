@@ -18,6 +18,10 @@ import "./component/Signin.css";
 import Adminproducts from './comp/admin/addproducts';
 import Adminhome from './comp/admin/hoempage';
 import Layyout from './comp/admin/layout';
+import ManageProducts from './comp/admin/productmanagement';
+import Dataadmin from './comp/admin/data';
+import Viewusers from './comp/admin/users';
+import Deleteprod from './comp/admin/deleteproducts';
 // import Footer from './comp/footer/footer';
 
 
@@ -40,6 +44,10 @@ function App() {
 </div>
 <div className='row'>
   <div className='col-12'>
+    
+   
+    
+    
 
 <Routes>
 <Route path='/jewel' element = {<Jewellery/> }/>
@@ -51,8 +59,9 @@ function App() {
 <Route path="/sign-in" element={<SignInForm/>}/>
 <Route path='/sign-up' element={<SignUpForm/>}/>
 <Route path='/about' element={<About/>}/>
-<Route  path="/admininter" element={<Adminproducts/>}  />
-<Route path='/adminhome' element={<Layyout/>}/>
+<Route  path="/addprod" element={<Adminproducts/>}  />
+<Route  path="/deleteprod" element={<Deleteprod/>}  />
+<Route path='/adminhome' element={<Adminhome/>}/>
 </Routes>
   </div>
 </div>

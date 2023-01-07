@@ -1,5 +1,6 @@
 
 import  { Doughnut,} from "react-chartjs-2";
+import Viewusers from "./users";
 const Dataadmin = () => {
 
     const data = {
@@ -38,6 +39,7 @@ const Dataadmin = () => {
         <div className="card col-6 mt-2 ms-2">
             <div className="card-body">
                 <h6>USERS</h6>
+                <Viewusers/>
             </div>
         </div>
     </div>
@@ -49,6 +51,10 @@ const Dataadmin = () => {
     </div>
     <div className="row">
         <h5>Active users</h5>
+           
+
+
+
     </div>
 </div>
 
