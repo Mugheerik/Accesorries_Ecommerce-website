@@ -19,14 +19,14 @@ const Layyout = () => {
            
             <div className="row mt-4">
                 
+              
+                <div className="col-4 mt-3 container">
+                <Dashsidebar/>
+                 </div>
+                <div className="col-8 mt-3">
                 <ManageProducts/>
+                 </div>
                 </div>
-                <div className="row mt-3">
-                <Viewusers/>
-                 </div>
-                <div className="row mt-3">
-                <Updateprod/>
-                 </div>
                  
                 
             

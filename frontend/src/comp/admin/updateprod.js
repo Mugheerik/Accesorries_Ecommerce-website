@@ -27,12 +27,13 @@ const Updateprod = () => {
     }
         return ( 
        <div className="container">
-        <div className="card display ">
-          <div className="card-title">
-            <h4>ADD PRODUCTS</h4>
-          </div>
+        <div className="mt-2">
+
+            <h4> PRODUCTS</h4>
+        </div>
     
-        <form  className="display " >
+    
+        <form  className="display p-4 " >
           
           <input 
            name="id"
@@ -63,10 +64,8 @@ const Updateprod = () => {
         </form>
     
         
-          </div>
-    
-       </div>
-    
+          
+    </div>
     
          );
     

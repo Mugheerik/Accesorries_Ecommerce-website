@@ -2,37 +2,41 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { viewproduct ,deletedproduct } from "../../service/api";
 
-const ManageProducts = () => {
+const ManageProducts =  () => {
 
     const navigate = useNavigate();
-
+ 
     
+
+
 
 const [productdetails,setProductdetails]=useState([]);
 
 
-useEffect(()=>{
-    Productdetails();
-},[]);
 
 
 const Productdetails =  async () => {
-
+    
     const getproductdetails = await viewproduct();
     setProductdetails(getproductdetails.data);
 }
 
-const handleSubmit =  async (id) => {
-    
-   await deletedproduct();
+
+const handleSubmit =  async (e) => {
+   await deletedproduct(productdetails);
+   const newproduct=await viewproduct();
+   setProductdetails(newproduct.data);
    
 }
+useEffect(()=>{
+    Productdetails();
+},[productdetails]);
 
 
     return (
 
       <div className="container">
-        <div className="row">
+        <div className="row card">
             <h3 >Product Management</h3>
 
             <table className="table">
@@ -40,10 +44,9 @@ const handleSubmit =  async (id) => {
                     <tr>
                         <th scope="col">PRODUCT ID</th>
                         <th scope="col">PRODUCT NAME</th>
-                        <th scope="col">CATEGORY</th>
-                        <th scope="col">DESCRIPITION</th>
                         <th scope="col">STOCK</th>
                         <th scope="col">PRICE</th>
+                        <th scope="col">OPERATIONS</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,12 +60,13 @@ const handleSubmit =  async (id) => {
                          <tr>
                     <td> {product.pid} </td>
                     <td> {product.pname} </td>
-                    <td>{product.pcategory}</td>
-                    <td>{product.pdescription}</td>
                     <td>{product.stock}</td>
                     <td>{product.pprice} $</td>
+                     
 
-                    <td><button  onClick={()=>handleSubmit(product.pid)}  >Delete </button></td>
+                    <td><button  onClick={(e)=>handleSubmit(e)}  >DELETE </button>
+                    </td>
+                    
                 </tr>
                              );
                     })

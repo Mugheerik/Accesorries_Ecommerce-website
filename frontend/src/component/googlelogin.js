@@ -15,6 +15,7 @@ return(
 <div id="signInButton">
 <GoogleLogin
 clientId={clientid}
+disabled={false}
 buttonText="login"
 onSucess={onSucess}
 onFailure={onFailure}

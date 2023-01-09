@@ -17,7 +17,7 @@
 
 import express from "express";
 import products from "./src/routes/products.js";
-import jewels from "./src/routes/jewel.js";
+// import jewels from "./src/routes/jewel.js";
 import signup from "./src/routes/signup.js";
 import signin from "./src/routes/signin.js"
 import cors from "cors";
@@ -51,7 +51,7 @@ app.use("/viewproducts", products);
 app.use("/deleteproducts",products);
 app.use("/updateproducts",products);
 app.use("/users",signup);
-app.use("/jewel",jewels );
+// app.use("/jewel",jewels );
 app.use("/signup",signup );
 app.use("/sign-in",signin );
 

@@ -13,6 +13,8 @@ const Logout= ()=>{
         <div id="signOutButton">
             <GoogleLogout
             clientid={clientid}
+            disabled={false}
+            accesstype={"online"}
             buttonText="logout"
             onlogoutsucces={onsucess}
             />

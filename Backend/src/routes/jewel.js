@@ -1,5 +1,5 @@
 import express from "express";
-import { productjewels } from "../controllers/jewel.js";
+// import { productjewels } from "../controllers/jewel.js";
 const router = express.Router();
 
 

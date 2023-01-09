@@ -1,13 +1,10 @@
-
-
-import {  NavLink } from "react-router-dom";
-import LoginButton from "./googlelogin"; 
-import LogoutButton from "./googlelogout";
+import LoginButton from "./component/googlelogin"; 
+import LogoutButton from "./component/googlelogout";
 import { useEffect } from "react";
 import {gapi} from "gapi-script";
 
 
-const Getstarted = () => {
+const Getstart = () => {
 
   const clientid = "1053601419167-t3acq2mhru5neo86d72qpnjm4t7pb5bg.apps.googleusercontent.com";
 
@@ -28,7 +25,7 @@ const Getstarted = () => {
       
         <div className="App1">
          
-          <div className="mt-4">
+      
            
 
             {/* <div className=" mt-4">
@@ -50,15 +47,15 @@ const Getstarted = () => {
 
               <div >
                <LoginButton/>
-              </div>
+              
   
-              <div >
+              
                 <LogoutButton/>
               </div>
           
 
             
-          </div>
+         
         </div>
        
      
@@ -66,4 +63,4 @@ const Getstarted = () => {
      );
 }
  
-export default Getstarted;
+export default Getstart;

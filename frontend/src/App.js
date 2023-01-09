@@ -22,6 +22,7 @@ import ManageProducts from './comp/admin/productmanagement';
 import Dataadmin from './comp/admin/data';
 import Viewusers from './comp/admin/users';
 import Deleteprod from './comp/admin/deleteproducts';
+import Getstart from './googlelog';
 // import Footer from './comp/footer/footer';
 
 
@@ -54,7 +55,7 @@ function App() {
 <Route path='/products' element = {<Allproducts/> }/>
 <Route path='/watch' element = {<Watches/> }/>
 <Route path='/glass' element = {<Glasses/> }/>
-<Route path='/getstart' element={<Getstarted/>}/>
+<Route path='/getstart' element={<Getstart/>}/>
 <Route exact path="/" element={<Home/>} />
 <Route path="/sign-in" element={<SignInForm/>}/>
 <Route path='/sign-up' element={<SignUpForm/>}/>

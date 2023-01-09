@@ -19,7 +19,7 @@ export const productsAdded=  async (req, res) => {
    const arrprice = req.body.price;
    const stprice = arrprice.toString();
 
-   const newproduct = new productdata({
+   const newproduct = await new productdata({
     pname :stpname,
    
     pid :stpid,
@@ -31,6 +31,7 @@ export const productsAdded=  async (req, res) => {
 
    try {
     await newproduct.save();
+    console.log("save");
     
    } catch (error) {
     console.log("not save");
@@ -49,14 +50,15 @@ export const getproducts =async (req,res) =>{
 
 
 export const deleteproducts = async (req,res ) =>{
+  
+  
    try {
    
-   const deletedproduct = await productdata.deleteOne({pid:req.body.id});
-
-       
+   let deletedproduct = await productdata.deleteOne();
+      
    console.log(deletedproduct);
 } catch (error) {
-   console.log ("delete failed")
+   console.log (error)
 }
 
 }
