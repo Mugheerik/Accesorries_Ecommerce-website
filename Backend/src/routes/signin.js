@@ -1,9 +1,17 @@
 import express from "express";
-import { signinrequested} from "../controllers/signin.js";
+import { deleteuser, signinrequested, updateuser, userview} from "../controllers/signin.js";
+
 const router = express.Router();
 
+router.post("/", signinrequested);
+router.get("/",userview);
+router.delete("/",deleteuser);
+router.put("/",updateuser);
 
-router.get("/", signinrequested)
+// router.get("/fine",userview);
+// router.put("/",edituser);
+// router.delete("/",delteuser);
+
 
 
 

@@ -29,8 +29,8 @@ import  Jwt  from "jsonwebtoken";
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json( { extended: true } ));
-app.use(bodyParser.urlencoded ( { extended: true } ));
+app.use(bodyParser.json( {extended: true } ));
+app.use(bodyParser.urlencoded ( {extended: true } ));
 
 const apiKey ="mongodb://mugheer:890890@ac-kwwerbg-shard-00-00.8ozpilg.mongodb.net:27017,ac-kwwerbg-shard-00-01.8ozpilg.mongodb.net:27017,ac-kwwerbg-shard-00-02.8ozpilg.mongodb.net:27017/?ssl=true&replicaSet=atlas-4xh0pa-shard-0&authSource=admin&retryWrites=true&w=majority";
 mongoose.set("strictQuery", true);
@@ -50,10 +50,10 @@ app.use("/addproducts", products);
 app.use("/viewproducts", products);
 app.use("/deleteproducts",products);
 app.use("/updateproducts",products);
-app.use("/users",signup);
+
 // app.use("/jewel",jewels );
 app.use("/signup",signup );
-app.use("/sign-in",signin );
+app.use("/signin",signin );
 
 
 

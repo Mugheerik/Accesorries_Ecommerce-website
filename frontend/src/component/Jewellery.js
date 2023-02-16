@@ -14,7 +14,7 @@ const Jewellery = () => {
 
                 
                 <div className="card mt-2 ms-2">
-              <Marquee name="JEWELLERY"/>
+              {/* <Marquee name="JEWELLERY"/> */}
                 </div>
                    
                         <div className="g-col-12 mt-4">

@@ -10,7 +10,7 @@ const Watches = () => {
 
         
         <div className="card mt-2 ms-2">
-       <Marquee name="WATCHES"/>
+       {/* <Marquee name="WATCHES"/> */}
         </div>
            
                 

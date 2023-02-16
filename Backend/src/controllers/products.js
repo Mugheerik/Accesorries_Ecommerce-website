@@ -53,9 +53,9 @@ export const deleteproducts = async (req,res ) =>{
   
   
    try {
-   
-   let deletedproduct = await productdata.deleteOne();
-      
+   const div=req.body._id;
+   console.log(div);
+   let deletedproduct = await productdata.deleteOne({_id:req.body._id});
    console.log(deletedproduct);
 } catch (error) {
    console.log (error)

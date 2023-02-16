@@ -1,26 +1,21 @@
-import { GoogleLogin } from "react-google-login";
+import GoogleButton from "react-google-button";
 
 const clientid = "1053601419167-t3acq2mhru5neo86d72qpnjm4t7pb5bg.apps.googleusercontent.com"
 
 const Login = ()=>{
 
-    const onSucess=(res)=>{
-        console.log("login succesful",res.profileObj);
-    }
-    const onFailure=(res)=>{
-        console.log("login succesful",res);
-    }
+    const googleauth=()=>{
+        window.open(
+            `${process.env.backend_url}/auth/google/callback`,
+            "_self"
+        );
+    };
 
 return(
 <div id="signInButton">
-<GoogleLogin
-clientId={clientid}
-disabled={false}
-buttonText="login"
-onSucess={onSucess}
-onFailure={onFailure}
-cookiePolicy={'single-host-origin'}
-isSignedIn={true}
+<GoogleButton
+label="sign in with google"
+onClick={googleauth}
 />
 </div>
 );

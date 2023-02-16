@@ -23,7 +23,7 @@ const Productdetails =  async () => {
 
 
 const handleSubmit =  async (e) => {
-   await deletedproduct(productdetails);
+   await deletedproduct(e);
    const newproduct=await viewproduct();
    setProductdetails(newproduct.data);
    
@@ -54,17 +54,17 @@ useEffect(()=>{
                 {
 
                     productdetails.map((product)=>{
-                       
-                     return (
-                         
-                         <tr>
+                        
+                        return (
+                            
+                            <tr>
                     <td> {product.pid} </td>
                     <td> {product.pname} </td>
                     <td>{product.stock}</td>
                     <td>{product.pprice} $</td>
                      
 
-                    <td><button  onClick={(e)=>handleSubmit(e)}  >DELETE </button>
+                    <td><button  onClick={()=>handleSubmit(product._id)}  >DELETE </button>
                     </td>
                     
                 </tr>

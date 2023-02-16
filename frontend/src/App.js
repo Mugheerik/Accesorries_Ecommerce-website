@@ -9,6 +9,7 @@ import Home from './comp/Home/home.js';
 import Navbar from './comp/nav';
 
 import About from './comp/about';
+import { useEffect } from 'react';
 
 import Getstarted from './component/getstarted';
 import Allproducts from './component/allprod';
@@ -23,6 +24,8 @@ import Dataadmin from './comp/admin/data';
 import Viewusers from './comp/admin/users';
 import Deleteprod from './comp/admin/deleteproducts';
 import Getstart from './googlelog';
+import GoogleButton from 'react-google-button';
+import Viewprofile from './component/showuser';
 // import Footer from './comp/footer/footer';
 
 
@@ -30,6 +33,8 @@ import Getstart from './googlelog';
 
 
 function App() {
+
+ 
 
   
   return (
@@ -55,7 +60,7 @@ function App() {
 <Route path='/products' element = {<Allproducts/> }/>
 <Route path='/watch' element = {<Watches/> }/>
 <Route path='/glass' element = {<Glasses/> }/>
-<Route path='/getstart' element={<Getstart/>}/>
+<Route path='/getstart' element={<Getstarted/>}/>
 <Route exact path="/" element={<Home/>} />
 <Route path="/sign-in" element={<SignInForm/>}/>
 <Route path='/sign-up' element={<SignUpForm/>}/>
@@ -63,6 +68,8 @@ function App() {
 <Route  path="/addprod" element={<Adminproducts/>}  />
 <Route  path="/deleteprod" element={<Deleteprod/>}  />
 <Route path='/adminhome' element={<Adminhome/>}/>
+<Route path='/userhome' element={<Viewprofile/>}/>
+
 </Routes>
   </div>
 </div>

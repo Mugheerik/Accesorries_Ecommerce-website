@@ -4,42 +4,48 @@ import { Link } from "react-router-dom";
 import LoginButton from "./googlelogin"; 
 import LogoutButton from "./googlelogout";
 import { useEffect } from "react";
-import {gapi} from "gapi-script";
+
 import './Signin.css';
+import { addsignin, signin } from "../service/api";
 const SignInForm=()=> {
 
   const clientid = "1053601419167-t3acq2mhru5neo86d72qpnjm4t7pb5bg.apps.googleusercontent.com";
 
-  useEffect(()=>{
-    function start(){
-      gapi.client.init({
-        clientid:clientid,
-        scope:""
-      })
-    };
-    gapi.load("client:auth2",start);
-  })
+  // useEffect(()=>{
+  //   function start(){
+  //     gapi.client.init({
+  //       clientid:clientid,
+  //       scope:""
+  //     })
+  //   };
+  //   gapi.load("client:auth2",start);
+  // })
   
 
 
    const [usersigndata,setUsersigndata] = useState({
-        email: "",
+        username: "",
         password: ""
       });  
-       const {email,password}=usersigndata;
+    
   
    const  handleChange=(e)=> {
-    setUsersigndata={...usersigndata,[e.target.name]:[e.target.value]};
+    setUsersigndata({...usersigndata,[e.target.name]:[e.target.value]});
    }
   
       
   
-   const handleSubmit=(e)=> {
+   const handleSubmit= async(e)=> {
       e.preventDefault();
+      await addsignin(usersigndata);
+     const data= await signin(usersigndata);
+   console.log();
+
   
       console.log("The form was submitted with the following data:");
     
     }
+   
   
     
       return (
@@ -47,17 +53,17 @@ const SignInForm=()=> {
 
         <div style={{color:"black"}} className="formCenter card mt-3">
 
-          <form className="formFields" onSubmit={(e)=>handleSubmit(e)}>
+          <form className="formFields" >
             <div className="formField">
               <label className="formFieldLabel" htmlFor="email">
                 E-Mail Address
               </label>
               <input
-                type="email"
-                id="email"
+                type="text"
+                id="username"
                 className="formFieldInput"
                 placeholder="Enter your email"
-                name="email"
+                name="username"
                 onChange={(e)=>handleChange(e)}
                 />
             </div>
@@ -77,21 +83,13 @@ const SignInForm=()=> {
             </div>
   
             <div className="formField">
-              <button className="formFieldButton">Sign In</button>{" "}
+              <button className="formFieldButton" onClick={(e)=>handleSubmit(e)}  >Sign In</button>{" "}
               <Link to="/sign-up" className="formFieldLink">
                 Create an account
               </Link>
             </div>
   
-            <div className="socialMediaButtons">
-              <div >
-               <LoginButton/>
-              </div>
-  
-              <div >
-                <LogoutButton/>
-              </div>
-            </div>
+           
           </form>
                 </div>
         </div>

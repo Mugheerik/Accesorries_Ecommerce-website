@@ -11,7 +11,7 @@ const Glasses = () => {
                 
                 <div className="card mt-2 ms-2">
                 
-                <Marquee name="GLASSES"/>
+                {/* <Marquee name="GLASSES"/> */}
                 
                 </div>
                    

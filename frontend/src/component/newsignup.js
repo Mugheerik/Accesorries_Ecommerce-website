@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
+import {FileBase64} from "react-file-base64";
 import { addsignupuser } from "../service/api";
 import "./Signin.css";
 
@@ -8,10 +9,12 @@ const SignUpForm=()=> {
 const [userdata,setUserdata]=useState({
   email: "",
   password: "",
-  name: ""
+  name: "",
+  program:"",
+  cellphone:"",
+  img:""
 });
 
-  const {email,password,name}=userdata;
       
     
 
@@ -73,19 +76,21 @@ const [userdata,setUserdata]=useState({
              
               onChange={(e)=>handleChange(e)}
             />
-          </div>
+            </div>
+        <br/>
+            <FileBase64
+             multiple={ false }
+    onDone={ (base64)=>  setUserdata({...userdata,img:[base64.currentTarget.value]}) }/>
 
-          
-
-          
             <button  className="formFieldButton"  onClick={(e)=>handleClick(e)} >Sign Up</button>
             <Link to="/sign-in" className="formFieldLink">
               I'm already member
             </Link>
          
         </form>
+          </div>
                 </div>
-      </div>
+
     );
   }
 

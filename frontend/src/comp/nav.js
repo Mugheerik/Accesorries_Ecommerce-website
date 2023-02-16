@@ -54,6 +54,11 @@ const Navbar = () => {
               </li>
             <li  className="nav-item">
            
+            <Link to='/userhome'  className='btn btn-outline-info ms-4 rounded-pill '>user</Link>
+               
+             </li>
+            <li  className="nav-item">
+           
             <Link to='/adminhome'  className='btn btn-outline-info ms-4 rounded-pill '>Admin</Link>
                
              </li>
